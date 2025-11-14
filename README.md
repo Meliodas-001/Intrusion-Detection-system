@@ -116,15 +116,11 @@ On the **Kali Linux** attacker VM (`192.168.0.116`), a standard `ping` command w
 
 This continuously sends **ICMP Echo Requests** to the Ubuntu server.
 
-![ICMP Ping flood from Kali Linux](images/Screenshot254.png)
-
 ### 4. Detection & Analysis
 Simultaneously, on the **Ubuntu Server** (`192.168.0.194`), Snort detected and logged this activity in real-time.
 
 > **Explanation of Alerts:**
 > The Snort console instantly displayed alerts for each ICMP packet. It correctly identified the incoming "ICMP Ping" (Type 8) from the attacker and the outgoing "ICMP Echo Reply" (Type 0) from the server. Snort rules flagged this as a "Classification: Information Leak" because the reply confirms to the attacker that the host is alive.
-
-![Snort detecting and logging ICMP alerts](images/Screenshot254.png)
 
 ---
 
